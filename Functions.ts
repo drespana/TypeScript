@@ -1,7 +1,7 @@
 
 // Union type and optionial parameters utilized in a function
 
-const add = (a:number, b:number, c?:number|string) => {
+const add = ( a: number, b: number, c?: number | string ) => {
     console.log(c)
     return a+b
 }
