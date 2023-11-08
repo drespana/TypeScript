@@ -19,7 +19,7 @@ type ContactStatus = "active" | "inactive" | "new"
 interface Contact {
     id: number;
     name: ContactName;
-    birthDate?: Date | number | string;
+    birthDate?: ContactBirthDate;
     status?: ContactStatus;
 }
 
