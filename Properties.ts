@@ -1,22 +1,22 @@
 class SecretPoint {
-    constructor( public x?: number, private y?: number ) {
+    constructor( public _x?: number, private _y?: number ) {
     } 
 
     // properties - read only access to outside/ basic validation
-    get X() {
-        return this.x
+    get x() {
+        return this._x
     }
 
-    set X(value) {
+    set x(value) {
         if (value < 0){
             throw new Error('value cannot be less than 0.')
-        this.x = value;
+        this._x = value;
         }
     }
 }
 
 let secret = new SecretPoint(1,2);
 // use PROPERTIES to get X
-let x = secret.X;
+let x = secret.x;
 // use to set
-secret.X = 10;
+secret.x = 10;
