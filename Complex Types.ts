@@ -11,7 +11,7 @@ enum Color {
     Black = "Black",
 }
 
-// use type 
+// use Complex Types //
 type ContactName = string;
 type ContactBirthDate = Date | number | string
 type ContactStatus = "active" | "inactive" | "new"
@@ -21,9 +21,10 @@ interface Contact {
     name: ContactName;
     birthDate?: ContactBirthDate;
     status?: ContactStatus;
+    email?: string;
 }
 
-// check types
+// check birthDate type //
 function getBrithDate(contact: Contact) {
     if (typeof contact.birthDate === "number") {
         return new Date(contact.birthDate);
@@ -34,4 +35,17 @@ function getBrithDate(contact: Contact) {
     else {
         return contact.birthDate
     }
+}
+
+// Use Contact as a Type //
+let primaryContact: Contact = {
+    id: 12345,
+    name:"Jamie Johnson",
+    status:"active"
+}
+
+type ContactFields = keyof Contact
+
+function getValue<T>(source: T, propertyName: keyof T) {
+    return source[propertyName]
 }
