@@ -49,3 +49,19 @@ type ContactFields = keyof Contact
 function getValue<T>(source: T, propertyName: keyof T) {
     return source[propertyName]
 }
+
+
+// typof 
+type Awesome = Contact["id"]
+
+interface ContactEvent {
+    contactId: Contact["id"];
+}
+
+interface ContactDeletedEvent extends ContactEvent {
+}
+
+interface ContactStatusChangedEvent extends ContactEvent {
+    oldStatus:"",
+    newStatus:""
+}
