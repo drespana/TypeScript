@@ -19,9 +19,9 @@ type ContactStatus = "active" | "inactive" | "new"
 interface Contact {
     id: number;
     name: ContactName;
-    birthDate?: ContactBirthDate;
-    status?: ContactStatus;
-    email?: string;
+    birthDate: ContactBirthDate;
+    status: ContactStatus;
+    email: string;
 }
 
 // check birthDate type //
@@ -37,8 +37,8 @@ function getBrithDate(contact: Contact) {
     }
 }
 
-// Use Contact as a Type //
-let primaryContact: Contact = {
+// Use Partial to make all properties optional - Partial can be used with Omit and Pick //
+let primaryContact: Partial<Contact> = {
     id: 12345,
     name:"Jamie Johnson",
     status:"active"

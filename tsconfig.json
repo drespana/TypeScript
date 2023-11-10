@@ -1,6 +1,10 @@
 {
     "compilerOptions":{
         "target":"ES5",
-        "outDir": "dist"
-    }//,{  } // add to look for ts in this folder
+        "outDir": "dist", 
+        "experimentalDecorators": true, // adds Decorators
+        "emitDecoratorMetadata": true, // npm i reflect-metadata --save => implements polyfills
+        "module":"CommonJS" // to use with Node.js    
+    }
+        //,{ "include": ["src/**/*"] } // add to look for ts in this folder
 }
