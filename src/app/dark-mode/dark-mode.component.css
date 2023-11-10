@@ -1,0 +1,20 @@
+* {
+    display:grid; 
+    align-self:center;
+    border:none;
+    
+    margin-left:80%;
+    border-radius:12px;
+    height:3%;
+    width:15%;
+}
+
+.light {
+    background-color:cornflowerblue;
+    color:aliceblue;
+}
+
+.dark {
+    background-color: lightblue;
+    color:rgb(71, 71, 71);
+}
