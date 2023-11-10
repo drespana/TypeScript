@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import events from '../../../shared/EventService';
+
 
 @Component({
   selector: 'dark-mode',
@@ -6,11 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./dark-mode.component.css']
 })
 export class DarkModeComponent {
-dark: boolean = false;
+  @Input() dark!: boolean;
+  @Output() darkened = new EventEmitter<boolean>();
 
 toggleDark() {
   this.dark = !this.dark
-  return this.dark;
+  this.darkened.emit(this.dark)
 }
 
 }

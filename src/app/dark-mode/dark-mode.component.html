@@ -1,3 +1,12 @@
 <button class="mt-4" [ngClass]="dark? 'dark': 'light'"
 (click)="toggleDark()"
->icon</button>
+>
+<span *ngIf="dark" class="material-symbols-outlined">
+dark_mode
+</span>
+
+<span *ngIf="!dark" class="material-symbols-outlined">
+    light_mode
+    </span>
+
+</button>
