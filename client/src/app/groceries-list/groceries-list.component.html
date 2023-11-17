@@ -3,20 +3,105 @@
     <button color="primary" mat-raised-button routerLink="/all">All Items</button>
 </div>
 
+
 <mat-grid-list cols="2">
-  <mat-grid-tile>
-    <mat-card> All "One-Time Request" Items Here </mat-card>
+  <mat-grid-tile> One-Time Request
+    <mat-card> 
+    <div *ngFor="let item of items$ | async">
+        <div *ngIf="item.frequency=='One-Time Request'">
+            <div class="card-contents-item">
+                {{ item.item }}
+              </div>
+          
+              <div class="card-contents-inStock">
+                {{ item.inStock === 0 ? "Out of Stock" : item.inStock }}
+              </div>
+          
+              <div class="button-container">
+                <button color="primary" mat-raised-button>
+                  <mat-icon fontIcon="mode"/>
+                </button>
+                <button color="warn" mat-raised-button >
+                  <mat-icon fontIcon="delete"/>
+                </button>
+              </div>
+        </div>
+    </div>
+    </mat-card>
   </mat-grid-tile>
 
-  <mat-grid-tile>
-    <mat-card> All "Weekly" Items Here </mat-card>
+  <mat-grid-tile> Weekly
+    <mat-card> 
+        <div *ngFor="let item of items$ | async">
+            <div *ngIf="item.frequency=='Weekly'">
+                <div class="card-contents-item">
+                    {{ item.item }}
+                  </div>
+              
+                  <div class="card-contents-inStock">
+                    {{ item.inStock === 0 ? "Out of Stock" : item.inStock }}
+                  </div>
+              
+                  <div class="button-container">
+                    <button color="primary" mat-raised-button>
+                      <mat-icon fontIcon="mode"/>
+                    </button>
+                    <button color="warn" mat-raised-button >
+                      <mat-icon fontIcon="delete"/>
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </mat-card>
   </mat-grid-tile>
 
-  <mat-grid-tile>
-    <mat-card> "Monthly" </mat-card>
+  <mat-grid-tile> Monthly
+    <mat-card> 
+        <div *ngFor="let item of items$ | async">
+            <div *ngIf="item.frequency=='Monthly'">
+                <div class="card-contents-item">
+                    {{ item.item }}
+                  </div>
+              
+                  <div class="card-contents-inStock">
+                    {{ item.inStock === 0 ? "Out of Stock" : item.inStock }}
+                  </div>
+              
+                  <div class="button-container">
+                    <button color="primary" mat-raised-button>
+                      <mat-icon fontIcon="mode"/>
+                    </button>
+                    <button color="warn" mat-raised-button >
+                      <mat-icon fontIcon="delete"/>
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </mat-card>
   </mat-grid-tile>
 
-  <mat-grid-tile>
-    <mat-card> "Indefinite" </mat-card>
+  <mat-grid-tile> Indefinite
+    <mat-card>
+        <div *ngFor="let item of items$ | async">
+            <div *ngIf="item.frequency=='Indefinite'">
+                <div class="card-contents-item">
+                    {{ item.item }}
+                  </div>
+              
+                  <div class="card-contents-inStock">
+                    {{ item.inStock === 0 ? "Out of Stock" : item.inStock }}
+                  </div>
+              
+                  <div class="button-container">
+                    <button color="primary" mat-raised-button>
+                      <mat-icon fontIcon="mode"/>
+                    </button>
+                    <button color="warn" mat-raised-button >
+                      <mat-icon fontIcon="delete"/>
+                    </button>
+                  </div>
+            </div>
+        </div>
+    </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
