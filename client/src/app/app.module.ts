@@ -22,6 +22,7 @@ import { ItemFormComponent } from './item-form/item-form.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AllItemsComponent } from './all-items/all-items.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GroceriesListComponent,
     ItemFormComponent,
     AddItemComponent,
-    EditItemComponent
+    EditItemComponent,
+    AllItemsComponent
   ],
   imports: [
     BrowserModule,
