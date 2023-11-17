@@ -1,12 +1,42 @@
-<h2>Grocery List</h2>
+<mat-toolbar>
+   <h2>Grocery List</h2> 
+</mat-toolbar>
 
-<mat-card>
-  <mat-card *ngFor="let item of items$ | async">
-   All Items: {{ item.item }}
-  </mat-card>
+
+
+<div class="allCards"> 
+<mat-card>All Items:
+  <mat-card-content *ngFor="let item of items$ | async">
+   {{ item.item }}
+  </mat-card-content>
 </mat-card>
+</div>
 
+<mat-grid-list cols="2">
+    <mat-grid-tile>
+        <mat-card>
+            All "One-Time Request" Items Here
+        </mat-card>
+    </mat-grid-tile>
 
+    <mat-grid-tile>
+        <mat-card>
+            All "Weekly" Items Here
+        </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-card>
+            "Monthly"
+        </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-card>
+            "Indefinite"
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
 
 <!-- <table class="table table-striped table-bordered">
     <thead>
