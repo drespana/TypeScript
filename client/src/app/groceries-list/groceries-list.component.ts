@@ -8,7 +8,9 @@ import { ItemService } from '../item.service';
   templateUrl: './groceries-list.component.html',
   styleUrls: ['./groceries-list.component.css']
 })
+
 export class GroceriesListComponent {
+  
   items$: Observable<Item[]> = new Observable();
 
   constructor(private itemService: ItemService) {}

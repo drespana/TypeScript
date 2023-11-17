@@ -1,6 +1,14 @@
 <h2>Grocery List</h2>
 
-<table class="table table-striped table-bordered">
+<mat-card>
+  <mat-card *ngFor="let item of items$ | async">
+   All Items: {{ item.item }}
+  </mat-card>
+</mat-card>
+
+
+
+<!-- <table class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>One</th>
@@ -19,10 +27,10 @@
 
             <td>
                 <button class="btn btn-primary me-1" [routerLink]="['items/edit/', item._id]">Edit</button>
-                <button class="btn btn-danger" method="DELETE" (click)="deleteItem(item._id || '')">Delete</button>
+                <button class="btn btn-danger"  (click)="deleteItem(item._id || '')">Delete</button>
             </td>
 
         </tr>
     </tbody>
 
-</table>
+</table> -->
